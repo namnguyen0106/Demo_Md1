@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="Css.css">
+
+</head>
+<body>
+<div>
+    <div>
+        <h1>Chào mừng bạn đến với game cờ caro</h1>
+    </div>
+    <label>
+        <p>Nhập tên người chơi X:</p>
+        <input type="text" id="userX" placeholder="Người chơi X">
+        <label id="winX"></label>
+    </label>
+    <label>
+        <p>Nhập tên người chơi O:</p>
+        <input type="text" id="userO" placeholder="Người chơi O">
+        <label id="winO"></label>
+    </label>
+    <label>
+        <p>Nhập độ rộng của sân chơi</p>
+        <input type="number" id="size" placeholder="20">
+    </label>
+    <label>
+        <button onclick="drawBoardGame()">CHIẾN THÔI</button>
+    </label>
+</div>
+<div>
+    <label id="tips">Người chơi X đi trước</label>
+    <div id="gameBoard">
+    </div>
+</div>
+</body>
+<script src="Users.js"></script>
+<script src="JavaScript.js"></script>
+</html>
