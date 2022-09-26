@@ -2,23 +2,43 @@ let listGame = [];
 let users = new Users("", "", "");
 
 function drawBoardGame() {
-    let size = +document.getElementById("size").value;
-    document.getElementById("userX").setAttribute("disabled", "disabled")
-    document.getElementById("userO").setAttribute("disabled", "disabled")
-    document.getElementById("size").setAttribute("disabled", "disabled")
-    let game = "<table>";
-    for (let i = 0; i < size; i++) {
-        game += "<tr>";
-        listGame[i] = [];
-        for (let j = 0; j < size; j++) {
-            game += "<td onclick='changeStatus(this, "+i+","+j+", " + size + ");'>&nbsp;</td>";
-            listGame[i][j] = -1;
+    let userX = document.getElementById("userX")
+    let userO = document.getElementById("userO")
+    let size = document.getElementById("size");
+    let errorUserX = document.getElementById("error_userX")
+    let errorUserO = document.getElementById("error_userO")
+    let errorSize = document.getElementById("error_size")
+    if (userX.value === "") {
+        errorUserX.innerHTML = "Hãy nhập tên người chơi X!!!"
+    } else if (userO.value === "") {
+        errorUserX.innerHTML = ""
+        errorUserO.innerHTML = "Hãy nhập tên người chơi O!!!"
+    } else if (size.value === "") {
+        errorUserO.innerHTML = ""
+        errorUserX.innerHTML = ""
+        errorSize.innerHTML = "Hãy nhập diện tích bàn cờ!!!"
+    } else {
+        errorSize.innerHTML = ""
+        errorUserO.innerHTML = ""
+        errorUserX.innerHTML = ""
+        document.getElementById("userX").setAttribute("disabled", "disabled")
+        document.getElementById("userO").setAttribute("disabled", "disabled")
+        document.getElementById("size").setAttribute("disabled", "disabled")
+        document.getElementById("start").setAttribute("disabled", "disabled")
+        let game = "<table>";
+        for (let i = 0; i < +size.value; i++) {
+            game += "<tr>";
+            listGame[i] = [];
+            for (let j = 0; j < +size.value; j++) {
+                game += "<td onclick='changeStatus(this, " + i + "," + j + ", " + +size.value + ");'>&nbsp;</td>";
+                listGame[i][j] = -1;
+            }
+            game += "</tr>";
         }
-        game += "</tr>";
+        game += "</table>";
+        document.getElementById("gameBoard").innerHTML = game;
+        console.log(listGame)
     }
-    game += "</table>";
-    document.getElementById("gameBoard").innerHTML = game;
-    console.log(listGame)
 }
 
 users.setUser("X")

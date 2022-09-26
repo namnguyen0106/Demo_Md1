@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="Css.css">
+
+</head>
+<body>
+<div>
+    <div align="center">
+        <h1>Chào mừng bạn đến với game cờ caro</h1>
+    </div>
+    <table cellspacing="0" cellpadding="0" style="width: 70%">
+        <tr>
+            <td style="width: 25%">
+                <label>
+                    <p>Nhập tên người chơi X:</p>
+                    <input type="text" id="userX" placeholder="Người chơi X"></br>
+                    <label id="error_userX" style="color: red"></label>
+                    <label id="winX"></label>
+                </label>
+            </td>
+            <td style="width: 25%">
+                <label>
+                    <p>Nhập tên người chơi O:</p>
+                    <input type="text" id="userO" placeholder="Người chơi O"></br>
+                    <label id="error_userO" style="color: red"></label>
+                    <label id="winO"></label>
+                </label>
+            </td>
+            <td style="width: 25%">
+                <label>
+                    <p>Nhập độ rộng của sân chơi</p>
+                    <input type="number" id="size" placeholder="20"></br>
+                    <label id="error_size" style="color: red"></label>
+                </label></br>
+            </td>
+            <td style="width: 25%">
+                <label>
+                    <button onclick="drawBoardGame()" id="start">CHIẾN THÔI</button>
+                </label>
+            </td>
+        </tr>
+    </table>
+</div>
+<div>
+    <label id="tips">Người chơi X đi trước</label>
+    <div id="gameBoard">
+    </div>
+</div>
+</body>
+<script src="Users.js"></script>
+<script src="JavaScript.js"></script>
+</html>
